@@ -1,1 +1,0 @@
-// Configure the PostgreSQL connection string in appsettings.json and read it in Startup.cs.
