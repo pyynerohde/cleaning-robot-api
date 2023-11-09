@@ -1,0 +1,1 @@
+// Define an entity that corresponds to the executions table.
