@@ -1,5 +1,3 @@
-//  Implement the interface; use a HashSet to track unique positions.
-
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -22,13 +20,16 @@ namespace TibberCleaningRobotApi.Services
         {
             var stopwatch = Stopwatch.StartNew(); // Start timing the operation
 
-            var uniquePositions = new HashSet<Position>();
-            var currentPosition = new Position { X = request.Start.X, Y = request.Start.Y };
-            uniquePositions.Add(currentPosition); // Add the starting position
+            var uniquePositions = new HashSet<long>();
+            long currentHash = ComputePositionHash(request.Start.X, request.Start.Y);
+            uniquePositions.Add(currentHash);
+
+            int x = request.Start.X;
+            int y = request.Start.Y;
 
             foreach (var command in request.Commands)
             {
-                ProcessCommand(command, currentPosition, uniquePositions);
+                ProcessCommand(command, ref x, ref y, uniquePositions);
             }
 
             stopwatch.Stop(); // Stop timing the operation
@@ -54,7 +55,7 @@ namespace TibberCleaningRobotApi.Services
             return result;
         }
 
-        private void ProcessCommand(Command command, Position currentPosition, HashSet<Position> uniquePositions)
+        private void ProcessCommand(Command command, ref int x, ref int y, HashSet<long> uniquePositions)
         {
             // Determine the movement vector based on the direction
             var (dx, dy) = GetMovementVector(command.Direction);
@@ -62,15 +63,21 @@ namespace TibberCleaningRobotApi.Services
             // Move the robot and track the positions
             for (int i = 0; i < command.Steps; i++)
             {
-                currentPosition.X += dx;
-                currentPosition.Y += dy;
-                uniquePositions.Add(new Position(currentPosition.X, currentPosition.Y));
+                x += dx;
+                y += dy;
+                long positionHash = ComputePositionHash(x, y);
+                uniquePositions.Add(positionHash);
             }
+        }
+
+        private long ComputePositionHash(int x, int y)
+        {
+            // Combine x and y into a unique hash code
+            return ((long)x << 32) | (uint)y;
         }
 
         private (int dx, int dy) GetMovementVector(string direction)
         {
-            // Convert direction to lower case to ensure case-insensitive comparison
             direction = direction.ToLowerInvariant();
             return direction switch
             {
@@ -83,4 +90,3 @@ namespace TibberCleaningRobotApi.Services
         }
     }
 }
-
