@@ -1,5 +1,3 @@
-// Define a POST method EnterPath that accepts a JSON body with the structure provided in the problem description.
-
 using Microsoft.AspNetCore.Mvc;
 using TibberCleaningRobotApi.Models;
 using TibberCleaningRobotApi.Services;
@@ -8,7 +6,7 @@ using System.Threading.Tasks;
 namespace TibberCleaningRobotApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("tibber-developer-test")]
     public class CleaningRobotController : ControllerBase
     {
         private readonly ICleaningRobotService _cleaningRobotService;
@@ -19,12 +17,14 @@ namespace TibberCleaningRobotApi.Controllers
             _cleaningRobotService = cleaningRobotService;
         }
 
-
         [HttpGet]
-        public IAction
+        public IActionResult Get()
+        {
+            return Ok("Welcome to the Tibber Cleaning Robot API");
+        }
 
         [HttpPost]
-        [Route("/tibber-developer-test/enter-path")]
+        [Route("enter-path")]
         public async Task<IActionResult> EnterPath([FromBody] CleaningRequest cleaningRequest)
         {
             // No need for input validation but it's good practice to check for nulls
