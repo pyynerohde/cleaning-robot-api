@@ -24,8 +24,8 @@ namespace TibberCleaningRobotApi.Services
             long currentHash = ComputePositionHash(request.Start.X, request.Start.Y);
             uniquePositions.Add(currentHash);
 
-            int x = request.StartingPoint.X;
-            int y = request.StartingPoint.Y;
+            int x = request.Start.X;
+            int y = request.Start.Y;
 
             foreach (var command in request.Commands)
             {
