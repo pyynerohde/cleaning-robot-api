@@ -72,7 +72,11 @@ namespace TibberCleaningRobotApi.Services
 
         private long ComputePositionHash(int x, int y)
         {
-            // Combine x and y into a unique hash code
+            /*
+            This is a simple way to combine x and y into a unique hash code. 
+            However, this approach may lead to hash collisions for very large grids 
+            or if the range of x and y is extended in the future.
+            */
             return ((long)x << 32) | (uint)y;
         }
 
