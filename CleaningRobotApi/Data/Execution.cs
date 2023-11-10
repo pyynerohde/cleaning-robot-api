@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace tibber_robot_api.Data
+namespace TibberCleaningRobotApi.Data
 {
     public class Execution
     {
