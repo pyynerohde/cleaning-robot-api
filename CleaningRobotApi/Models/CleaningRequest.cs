@@ -13,15 +13,16 @@ namespace TibberCleaningRobotApi.Models
         }
     }
 
+// Letting them be type long in case there are crazy large numbers of commands, otherwise they could've been int.
     public class Point
     {
-        public int X { get; set; }
-        public int Y { get; set; }
+        public long X { get; set; }
+        public long Y { get; set; }
     }
 
     public class Command
     {
         public string Direction { get; set; }
-        public int Steps { get; set; }
+        public long Steps { get; set; }
     }
 }

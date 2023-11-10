@@ -24,8 +24,9 @@ namespace TibberCleaningRobotApi.Services
             long currentHash = ComputePositionHash(request.Start.X, request.Start.Y);
             uniquePositions.Add(currentHash);
 
-            int x = request.Start.X;
-            int y = request.Start.Y;
+            // Letting them be type long in case there are crazy large start positions, otherwise they could've been int.
+            long x = request.Start.X;
+            long y = request.Start.Y;
 
             foreach (var command in request.Commands)
             {
@@ -55,13 +56,13 @@ namespace TibberCleaningRobotApi.Services
             return result;
         }
 
-        private void ProcessCommand(Command command, ref int x, ref int y, HashSet<long> uniquePositions)
+        private void ProcessCommand(Command command, ref long x, ref long y, HashSet<long> uniquePositions)
         {
             // Determine the movement vector based on the direction
             var (dx, dy) = GetMovementVector(command.Direction);
 
             // Move the robot and track the positions
-            for (int i = 0; i < command.Steps; i++)
+            for (long i = 0; i < command.Steps; i++)
             {
                 x += dx;
                 y += dy;
@@ -70,7 +71,7 @@ namespace TibberCleaningRobotApi.Services
             }
         }
 
-        private long ComputePositionHash(int x, int y)
+        private long ComputePositionHash(long x, long y)
         {
             /*
             The approach to combine x and y into a unique hash code is simple and does not require you to 
@@ -83,7 +84,7 @@ namespace TibberCleaningRobotApi.Services
             return ((long)x << 32) | (uint)y;
         }
 
-        private (int dx, int dy) GetMovementVector(string direction)
+        private (long dx, long dy) GetMovementVector(string direction)
         {
             direction = direction.ToLowerInvariant();
             return direction switch
