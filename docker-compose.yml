@@ -1,0 +1,38 @@
+version: '3.4'
+
+networks:
+  dockerapi-dev:
+    driver: bridge 
+
+services:
+  tibber-robot-api:
+    image: tibberrobotapi
+    build:
+      context: .
+      dockerfile: CleaningRobotApi/Dockerfile
+    ports:
+      - "5000:80"
+    environment:
+      DB_CONNECTION_STRING: "Host=postgresdb;Database=tibber;Port=5432;Username=postgres;Password=robot;Pooling=true;"
+    networks:
+      - dockerapi-dev
+    depends_on:
+      - postgres
+
+  postgres:
+    container_name: postgresdb
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "robot"
+      POSTGRES_DB: "tibber"
+    volumes:
+      - postgresdb-data:/var/lib/postgresql/data
+    networks:
+      - dockerapi-dev
+
+volumes:
+  postgresdb-data:
