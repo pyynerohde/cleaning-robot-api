@@ -21,11 +21,11 @@ namespace TibberCleaningRobotApi.Services
             var stopwatch = Stopwatch.StartNew(); // Start timing the operation
 
             var uniquePositions = new HashSet<long>();
-            long currentHash = ComputePositionHash(request.Start.X, request.Start.Y);
+            long currentHash = ComputePositionHash(request.StartingPoint.X, request.StartingPoint.Y);
             uniquePositions.Add(currentHash);
 
-            int x = request.Start.X;
-            int y = request.Start.Y;
+            int x = request.StartingPoint.X;
+            int y = request.StartingPoint.Y;
 
             foreach (var command in request.Commands)
             {
@@ -73,9 +73,12 @@ namespace TibberCleaningRobotApi.Services
         private long ComputePositionHash(int x, int y)
         {
             /*
-            This is a simple way to combine x and y into a unique hash code. 
-            However, this approach may lead to hash collisions for very large grids 
-            or if the range of x and y is extended in the future.
+            The approach to combine x and y into a unique hash code is simple and does not require you to 
+            store the positions in a grid. We only use the HashSet to track the unique positions, and this 
+            way we don't need to define what "unique" is in the sense of overriding the Equals and GetHashCode
+            methods to check for 'value equality' instead of 'reference equality'. 
+    
+            However, this approach could in theory lead to hash collisions for very large grids. 
             */
             return ((long)x << 32) | (uint)y;
         }
