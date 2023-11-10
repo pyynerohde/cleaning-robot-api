@@ -11,5 +11,17 @@ namespace TibberCleaningRobotApi.Models
         {
             Commands = new List<Command>();
         }
-}
+    }
+
+    public class Point
+    {
+        public int X { get; set; }
+        public int Y { get; set; }
+    }
+
+    public class Command
+    {
+        public string Direction { get; set; }
+        public int Steps { get; set; }
+    }
 }
