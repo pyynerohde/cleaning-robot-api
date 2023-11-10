@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/oscarrohde/Desktop/tibber-case/CleaningRobotApi/CleaningRobotApi.csproj": {}
+    "/Users/oscarrohde/Desktop/tibber-case/cleaning-robot-api/CleaningRobotApi/CleaningRobotApi.csproj": {}
   },
   "projects": {
-    "/Users/oscarrohde/Desktop/tibber-case/CleaningRobotApi/CleaningRobotApi.csproj": {
+    "/Users/oscarrohde/Desktop/tibber-case/cleaning-robot-api/CleaningRobotApi/CleaningRobotApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/oscarrohde/Desktop/tibber-case/CleaningRobotApi/CleaningRobotApi.csproj",
+        "projectUniqueName": "/Users/oscarrohde/Desktop/tibber-case/cleaning-robot-api/CleaningRobotApi/CleaningRobotApi.csproj",
         "projectName": "CleaningRobotApi",
-        "projectPath": "/Users/oscarrohde/Desktop/tibber-case/CleaningRobotApi/CleaningRobotApi.csproj",
+        "projectPath": "/Users/oscarrohde/Desktop/tibber-case/cleaning-robot-api/CleaningRobotApi/CleaningRobotApi.csproj",
         "packagesPath": "/Users/oscarrohde/.nuget/packages/",
-        "outputPath": "/Users/oscarrohde/Desktop/tibber-case/CleaningRobotApi/obj/",
+        "outputPath": "/Users/oscarrohde/Desktop/tibber-case/cleaning-robot-api/CleaningRobotApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/oscarrohde/.nuget/NuGet/NuGet.Config"
@@ -38,9 +38,27 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "Microsoft.AspNetCore.OpenApi": {
+            "EFCore.NamingConventions": {
               "target": "Package",
-              "version": "[7.0.13, )"
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

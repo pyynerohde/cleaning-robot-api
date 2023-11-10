@@ -4,7 +4,7 @@ namespace TibberCleaningRobotApi.Models
 {
     public class CleaningRequest
     {
-        public Point StartingPoint { get; set; }
+        public Point Start { get; set; }
         public List<Command> Commands { get; set; }
 
         public CleaningRequest()
