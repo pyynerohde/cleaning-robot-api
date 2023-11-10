@@ -1,6 +1,7 @@
+using System;
 using Microsoft.EntityFrameworkCore;
 
-namespace tibber_robot_api.Data
+namespace TibberCleaningRobotApi.Data
 {
     public class AppDbContext : DbContext
     {
