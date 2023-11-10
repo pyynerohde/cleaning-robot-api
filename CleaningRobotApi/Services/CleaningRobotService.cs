@@ -21,12 +21,11 @@ namespace TibberCleaningRobotApi.Services
             var stopwatch = Stopwatch.StartNew(); // Start timing the operation
 
             var uniquePositions = new HashSet<long>();
-            long currentHash = ComputePositionHash(request.Start.X, request.Start.Y);
+            var currentHash = ComputePositionHash(request.Start.X, request.Start.Y);
             uniquePositions.Add(currentHash);
 
-            // Letting them be type long in case there are crazy large start positions, otherwise they could've been int.
-            long x = request.Start.X;
-            long y = request.Start.Y;
+            var x = request.Start.X;
+            var y = request.Start.Y;
 
             foreach (var command in request.Commands)
             {
@@ -66,7 +65,7 @@ namespace TibberCleaningRobotApi.Services
             {
                 x += dx;
                 y += dy;
-                long positionHash = ComputePositionHash(x, y);
+                var positionHash = ComputePositionHash(x, y);
                 uniquePositions.Add(positionHash);
             }
         }
