@@ -5,13 +5,13 @@ networks:
     driver: bridge 
 
 services:
-  tibber-robot-api:
-    image: tibberrobotapi
+  cleaning-robot-api:
+    image: cleaning-robot-api
     build:
       context: .
       dockerfile: CleaningRobotApi/Dockerfile
     ports:
-      - "5000:80"
+      - "5001:80"
     environment:
       DB_CONNECTION_STRING: "Host=postgresdb;Database=tibber;Port=5432;Username=postgres;Password=robot;Pooling=true;"
     networks:
