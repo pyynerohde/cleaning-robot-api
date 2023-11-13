@@ -29,7 +29,7 @@ namespace TibberCleaningRobotApi.Services
 
             foreach (var command in request.Commands)
             {
-                ProcessCommand(command, ref x, ref y, uniquePositions);
+                ProcessCommand(command, ref x, ref y, ref uniquePositions);
             }
 
             stopwatch.Stop(); // Stop timing the operation
@@ -55,7 +55,7 @@ namespace TibberCleaningRobotApi.Services
             return result;
         }
 
-        private void ProcessCommand(Command command, ref long x, ref long y, HashSet<long> uniquePositions)
+        private void ProcessCommand(Command command, ref long x, ref long y, ref HashSet<long> uniquePositions)
         {
             // Determine the movement vector based on the direction
             var (dx, dy) = GetMovementVector(command.Direction);
@@ -80,7 +80,7 @@ namespace TibberCleaningRobotApi.Services
     
             However, this approach could in theory lead to hash collisions for very large grids. 
             */
-            return ((long)x << 32) | (uint)y;
+            return ((long)x << 32) | (long)y;
         }
 
         private (long dx, long dy) GetMovementVector(string direction)
