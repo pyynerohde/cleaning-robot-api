@@ -13,11 +13,11 @@ namespace TibberCleaningRobotApi.Models
         }
     }
 
-// Letting them be type long in case there are crazy large numbers of commands, otherwise they could've been int.
+// Changing to int for lower memory consumption, in case there are crazy large numbers of commands use long.
     public class Point
     {
-        public long X { get; set; }
-        public long Y { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
     }
 
     public class Command
