@@ -1,11 +1,11 @@
 # Use the official image as a parent image
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:7.0-alpine-amd64 AS base
 WORKDIR /app
 EXPOSE 80
-EXPOSE 443
+#EXPOSE 443
 
 # Use SDK image to build the application
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:7.0-alpine-amd64 AS build
 WORKDIR /src
 COPY ["CleaningRobotApi/CleaningRobotApi.csproj", "./"]
 RUN dotnet restore "CleaningRobotApi.csproj"
