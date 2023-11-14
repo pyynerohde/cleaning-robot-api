@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cg6snXsqURPNLuAJp3SUZ/hbwIgXdzuB8r3KAzkXMhXeP9T6mZ7tHfURCBLxQ7PxmqxyHyuAZ2CXD0GsKN+McQ==",
+  "dgSpecHash": "NoY56J3w8h/nhoyPcrAaMEVWF93AtAczu7GDL/pEHC+XM3tubAgLnwfPhmWgI10ZdvDIV+4oL0MdTop8FFICjA==",
   "success": true,
-  "projectFilePath": "/Users/oscarrohde/Desktop/tibber-case/cleaning-robot-api/CleaningRobotApi/CleaningRobotApi.csproj",
+  "projectFilePath": "/Users/oscarrohde/Desktop/cleaning-robot-api/CleaningRobotApi/CleaningRobotApi.csproj",
   "expectedPackageFiles": [
     "/Users/oscarrohde/.nuget/packages/efcore.namingconventions/7.0.0/efcore.namingconventions.7.0.0.nupkg.sha512",
     "/Users/oscarrohde/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",

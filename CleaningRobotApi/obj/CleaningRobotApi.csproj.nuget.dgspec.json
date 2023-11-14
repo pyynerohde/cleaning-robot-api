@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/oscarrohde/Desktop/tibber-case/cleaning-robot-api/CleaningRobotApi/CleaningRobotApi.csproj": {}
+    "/Users/oscarrohde/Desktop/cleaning-robot-api/CleaningRobotApi/CleaningRobotApi.csproj": {}
   },
   "projects": {
-    "/Users/oscarrohde/Desktop/tibber-case/cleaning-robot-api/CleaningRobotApi/CleaningRobotApi.csproj": {
+    "/Users/oscarrohde/Desktop/cleaning-robot-api/CleaningRobotApi/CleaningRobotApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/oscarrohde/Desktop/tibber-case/cleaning-robot-api/CleaningRobotApi/CleaningRobotApi.csproj",
+        "projectUniqueName": "/Users/oscarrohde/Desktop/cleaning-robot-api/CleaningRobotApi/CleaningRobotApi.csproj",
         "projectName": "CleaningRobotApi",
-        "projectPath": "/Users/oscarrohde/Desktop/tibber-case/cleaning-robot-api/CleaningRobotApi/CleaningRobotApi.csproj",
+        "projectPath": "/Users/oscarrohde/Desktop/cleaning-robot-api/CleaningRobotApi/CleaningRobotApi.csproj",
         "packagesPath": "/Users/oscarrohde/.nuget/packages/",
-        "outputPath": "/Users/oscarrohde/Desktop/tibber-case/cleaning-robot-api/CleaningRobotApi/obj/",
+        "outputPath": "/Users/oscarrohde/Desktop/cleaning-robot-api/CleaningRobotApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/oscarrohde/.nuget/NuGet/NuGet.Config"
